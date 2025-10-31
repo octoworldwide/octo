@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Coming soon." />
+  <title>Coming Soon</title>
+
+  <!-- Theme color for browsers / mobile -->
+  <meta name="theme-color" content="#000000" />
+
+  <style>
+    /* Reset-ish */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+
+    /* Page visuals */
+    html, body {
+      background: #000000;            /* pure black */
+      color: #ffffff;                 /* white text */
+      font-family: Inter, system-ui, -apple-system, "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Centering container */
+    .center {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* The actual message */
+    .card {
+      max-width: 880px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 4.5rem); /* responsive sizing */
+      margin: 0 0 0.5rem 0;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      font-size: clamp(0.95rem, 2.5vw, 1.125rem);
+      opacity: 0.85;
+    }
+
+    /* Small subtle flourish - thin underline that animates once */
+    .underline {
+      display: inline-block;
+      height: 3px;
+      width: 120px;
+      background: linear-gradient(90deg,#fff 0%,#fff 100%);
+      margin: 1.25rem auto 0;
+      border-radius: 2px;
+      transform-origin: left center;
+      animation: reveal 900ms ease-out 1;
+      opacity: 0.9;
+    }
+    @keyframes reveal {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .underline { animation: none; transform: scaleX(1); }
+    }
+
+    /* Make sure text is readable on small screens */
+    @media (max-width: 420px) {
+      body { padding: 8px; }
+      h1 { letter-spacing: -0.01em; }
+    }
+  </style>
+</head>
+<body>
+  <main class="center" role="main" aria-labelledby="coming-soon-heading">
+    <div class="card" aria-live="polite">
+      <h1 id="coming-soon-heading">Coming soon</h1>
+      <p>We're working on something awesome. Check back later.</p>
+      <div class="underline" aria-hidden="true"></div>
+    </div>
+  </main>
+</body>
+</html>
